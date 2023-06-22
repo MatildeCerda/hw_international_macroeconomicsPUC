@@ -152,30 +152,29 @@ det2_gy_usa = detrend(log(G_usa)./log(GDP_pc_usa),2);
 %Nicaragua
 
 %HP lambda = 100
-hp100nic_ciclo = [hp_cycle_nic_1 hp_cycle_nic_3 hp_cycle_nic_4 hp_cycle_nic_5 hp_cycle_nic_6];
-
+hp100nic_ciclo = [hp_cycle_nic_1 hp_cycle_nic_3 hp_cycle_nic_4 hp_cycle_nic_5 hp_cycle_nic_6 hp_cycle_nic_x_1 hp_cycle_nic_m_1];
 hp100nic_y_c = [hp_cycle_nic_1(35:62) hp_cycle_nic_2]; %matriz que contiene variables para sacar correlacion
 hp100nic_corr_ciclo= corrcoef(hp100nic_ciclo); %para sacar tabla de correlaciones de todas variables juntas                                       %matriz de correlacion de todas variables exceptuando consumo con PIB
 hp100nic_corr_y_c= corrcoef(hp100nic_y_c);%consultar si debido al consumo debemos recortar la muestra
-nic_ciclo = [hp_cycle_nic_1 hp_cycle_nic_3 hp_cycle_nic_4 hp_cycle_nic_5 hp_cycle_nic_6];
-nic_y_c = [hp_cycle_nic_1(35:62) hp_cycle_nic_2];
-nic_corr_ciclo= corrcoef(nic_ciclo);
+%nic_ciclo = [hp_cycle_nic_1 hp_cycle_nic_3 hp_cycle_nic_4 hp_cycle_nic_5 hp_cycle_nic_6];
+%nic_y_c = [hp_cycle_nic_1(35:62) hp_cycle_nic_2];
+%nic_corr_ciclo= corrcoef(nic_ciclo);
 
 
 %HP lambda = 6.25
-hp6nic_ciclo = [hp_cycle_nic_7 hp_cycle_nic_9 hp_cycle_nic_10 hp_cycle_nic_11 hp_cycle_nic_12];
+hp6nic_ciclo = [hp_cycle_nic_7 hp_cycle_nic_9 hp_cycle_nic_10 hp_cycle_nic_11 hp_cycle_nic_12 hp_cycle_nic_x_2 hp_cycle_nic_m_2];
 hp6nic_y_c = [hp_cycle_nic_7(35:62) hp_cycle_nic_8];
 hp6nic_corr_ciclo= corrcoef(hp6nic_ciclo);
 hp6nic_corr_y_c= corrcoef(hp6nic_y_c);%consultar si debido al consumo debemos recortar la muestra
 
 %log-linear detrending 
-det1_nic_ciclo = [det1_gdp_pc_nic det1_I_nic det1_G_nic  det1_tb_nic det1_gy_nic];
+det1_nic_ciclo = [det1_gdp_pc_nic det1_I_nic det1_G_nic  det1_tb_nic det1_gy_nic det1_X_nic det1_M_nic];
 det1_nic_y_c = [det1_gdp_pc_nic(35:62) det1_C_nic];
 det1_nic_corr_ciclo= corrcoef(det1_nic_ciclo);
 det1_nic_corr_y_c= corrcoef(det1_nic_y_c);%consultar si debido al consumo debemos recortar la muestra
 
 %log-quadratic detrending
-det2_nic_ciclo = [det2_gdp_pc_nic det2_I_nic det2_G_nic det2_G_nic det2_tb_nic det2_gy_nic];
+det2_nic_ciclo = [det2_gdp_pc_nic det2_I_nic det2_G_nic det2_G_nic det2_tb_nic det2_gy_nic det2_X_nic det2_X_nic];
 det2_nic_y_c = [det2_gdp_pc_nic(35:62) det2_C_nic];
 det2_nic_corr_ciclo= corrcoef(det2_nic_ciclo);
 det2_nic_corr_y_c= corrcoef(det2_nic_y_c);%consultar si debido al consumo debemos recortar la muestra
@@ -183,19 +182,19 @@ det2_nic_corr_y_c= corrcoef(det2_nic_y_c);%consultar si debido al consumo debemo
 %USA
 
 %HP lambda = 100
-hp100usa_ciclo = [hp_cycle_usa_1 hp_cycle_usa_3 hp_cycle_usa_4 hp_cycle_usa_5 hp_cycle_usa_6];
+hp100usa_ciclo = [hp_cycle_usa_1 hp_cycle_usa_3 hp_cycle_usa_4 hp_cycle_usa_5 hp_cycle_usa_6 hp_cycle_usa_x_1 hp_cycle_usa_m_1];
 hp100usa_y_c = [hp_cycle_usa_1 hp_cycle_usa_2];
 hp100usa_corr_ciclo= corrcoef(hp100usa_ciclo);
 hp100usa_corr_y_c= corrcoef(hp100usa_y_c);%consultar si debido al consumo debemos recortar la muestra
 
 %HP lambda = 6.25
-hp6usa_ciclo = [hp_cycle_usa_7 hp_cycle_usa_9 hp_cycle_usa_10 hp_cycle_usa_11 hp_cycle_usa_12];
+hp6usa_ciclo = [hp_cycle_usa_7 hp_cycle_usa_9 hp_cycle_usa_10 hp_cycle_usa_11 hp_cycle_usa_12 hp_cycle_usa_x_2 hp_cycle_usa_m_2];
 hp6usa_y_c = [hp_cycle_usa_7 hp_cycle_usa_8];
 hp6usa_corr_ciclo= corrcoef(hp6usa_ciclo);
 hp6usa_corr_y_c= corrcoef(hp6usa_y_c);%consultar si debido al consumo debemos recortar la muestra
 
 %log-linear detrending 
-det1_usa_ciclo = [det1_gdp_pc_usa det1_I_usa det1_G_usa det1_tb_usa det1_gy_usa];
+det1_usa_ciclo = [det1_gdp_pc_usa det1_I_usa det1_G_usa det1_tb_usa det1_gy_usa det1_X_usa det1_M_usa];
 det1_usa_y_c = [det1_gdp_pc_usa det1_C_usa];
 det1_usa_corr_ciclo= corrcoef(det1_usa_ciclo);
 det1_usa_corr_y_c= corrcoef(det1_usa_y_c);%consultar si debido al consumo debemos recortar la muestra
@@ -203,7 +202,7 @@ det1_usa_corr_y_c= corrcoef(det1_usa_y_c);%consultar si debido al consumo debemo
 %LAMBDA=6.25
 
 %log-quadratic detrending
-det2_usa_ciclo = [det2_gdp_pc_usa det2_I_usa det2_G_usa det2_tb_usa det2_gy_usa];
+det2_usa_ciclo = [det2_gdp_pc_usa det2_I_usa det2_G_usa det2_tb_usa det2_gy_usa det2_X_usa det2_M_usa];
 det2_usa_y_c = [det2_gdp_pc_usa det2_C_usa];
 det2_usa_corr_ciclo= corrcoef(det2_usa_ciclo);
 det2_usa_corr_y_c= corrcoef(det2_usa_y_c);%consultar si debido al consumo debemos recortar la muestra
@@ -216,6 +215,8 @@ results_correl(3,1)= det1_nic_corr_ciclo(2,1);%respecto a i
 results_correl(4,1)= det1_nic_corr_ciclo(3,1);%respecto a g
 results_correl(5,1)= det1_nic_corr_ciclo(4,1);%respecto a tb
 results_correl(6,1)= det1_nic_corr_ciclo(5,1);%respecto a g/y
+results_correl(7,1)= det1_nic_corr_ciclo(6,1);%respecto a x
+results_correl(8,1)= det1_nic_corr_ciclo(7,1);%respecto a m
 
 %Metodo detrending lineal - USA
 results_correl(1,2)= det1_usa_corr_ciclo(1,1);% respecto a ella misma y_pc
@@ -224,6 +225,8 @@ results_correl(3,2)= det1_usa_corr_ciclo(2,1);%respecto a i
 results_correl(4,2)= det1_usa_corr_ciclo(3,1);%respecto a g
 results_correl(5,2)= det1_usa_corr_ciclo(4,1);%respecto a tb
 results_correl(6,2)= det1_usa_corr_ciclo(5,1);%respecto a g/y
+results_correl(7,2)= det1_usa_corr_ciclo(6,1);%respecto a x
+results_correl(8,2)= det1_usa_corr_ciclo(7,1);%respecto a m
 
 %Metodo detrending cuadratico - Nicaragua
 results_correl(1,3)= det2_nic_corr_ciclo(1,1); %respecto a ella misma y_pc
@@ -232,6 +235,8 @@ results_correl(3,3)= det2_nic_corr_ciclo(2,1);%respecto a i
 results_correl(4,3)= det2_nic_corr_ciclo(3,1);%respecto a g
 results_correl(5,3)= det2_nic_corr_ciclo(4,1);%respecto a tb
 results_correl(6,3)= det2_nic_corr_ciclo(5,1);%respecto a g/y
+results_correl(7,3)= det2_nic_corr_ciclo(6,1);%respecto a x
+results_correl(8,3)= det2_nic_corr_ciclo(7,1);%respecto a m
 
 %Metodo detrending cuadratico - USA
 results_correl(1,4)= det2_usa_corr_ciclo(1,1); %respecto a ella misma y_pc
@@ -240,6 +245,8 @@ results_correl(3,4)= det2_usa_corr_ciclo(2,1);%respecto a i
 results_correl(4,4)= det2_usa_corr_ciclo(3,1);%respecto a g
 results_correl(5,4)= det2_usa_corr_ciclo(4,1);%respecto a tb
 results_correl(6,4)= det2_usa_corr_ciclo(5,1);%respecto a g/y
+results_correl(7,4)= det2_usa_corr_ciclo(6,1);%respecto a x
+results_correl(8,4)= det2_usa_corr_ciclo(7,1);%respecto a m
 
 %Metodo HP lambda=100 - Nicaragua 
 results_correl(1,5)= hp100nic_corr_ciclo(1,1); %respecto a ella misma y_pc
@@ -248,6 +255,8 @@ results_correl(3,5)= hp100nic_corr_ciclo(2,1);%respecto a i
 results_correl(4,5)= hp100nic_corr_ciclo(3,1);%respecto a g
 results_correl(5,5)= hp100nic_corr_ciclo(4,1);%respecto a tb
 results_correl(6,5)= hp100nic_corr_ciclo(5,1);%respecto a g/y
+results_correl(7,5)= hp100nic_corr_ciclo(6,1);%respecto a X
+results_correl(8,5)= hp100nic_corr_ciclo(7,1);%respecto a M
 
 %Metodo HP lambda=100 - United States 
 results_correl(1,6)= hp100usa_corr_ciclo(1,1); %respecto a ella misma y_pc
@@ -256,6 +265,8 @@ results_correl(3,6)= hp100usa_corr_ciclo(2,1);%respecto a i
 results_correl(4,6)= hp100usa_corr_ciclo(3,1);%respecto a g
 results_correl(5,6)= hp100usa_corr_ciclo(4,1);%respecto a tb
 results_correl(6,6)= hp100usa_corr_ciclo(5,1);%respecto a g/y
+results_correl(7,6)= hp100usa_corr_ciclo(6,1);%respecto a X
+results_correl(8,6)= hp100usa_corr_ciclo(7,1);%respecto a M
 
 %Metodo HP lambda=6 - Nicaragua 
 results_correl(1,7)= hp6nic_corr_ciclo(1,1); %respecto a ella misma y_pc
@@ -264,6 +275,8 @@ results_correl(3,7)= hp6nic_corr_ciclo(2,1);%respecto a i
 results_correl(4,7)= hp6nic_corr_ciclo(3,1);%respecto a g
 results_correl(5,7)= hp6nic_corr_ciclo(4,1);%respecto a tb
 results_correl(6,7)= hp6nic_corr_ciclo(5,1);%respecto a g/y
+results_correl(7,7)= hp6nic_corr_ciclo(6,1);%respecto a tb
+results_correl(8,7)= hp6nic_corr_ciclo(7,1);%respecto a g/y
 
 %Metodo HP lambda=6 - United States 
 results_correl(1,8)= hp6usa_corr_ciclo(1,1); %respecto a ella misma y_pc
@@ -272,8 +285,10 @@ results_correl(3,8)= hp6usa_corr_ciclo(2,1);%respecto a i
 results_correl(4,8)= hp6usa_corr_ciclo(3,1);%respecto a g
 results_correl(5,8)= hp6usa_corr_ciclo(4,1);%respecto a tb
 results_correl(6,8)= hp6usa_corr_ciclo(5,1);%respecto a g/y
+results_correl(7,8)= hp6usa_corr_ciclo(6,1);%respecto a tb
+results_correl(8,8)= hp6usa_corr_ciclo(7,1);%respecto a g/y
 
-rowNames = {'y','c','i','g','tb','g/y'};
+rowNames = {'y','c','i','g','tb','g/y','x','m'};
 colNames = {'Linear Nic','Linear USA','Quadratic Nic','Quadratic USA', 'HP con λ = 100 Nic','HP con λ = 100 USA','HP con λ = 6.25 Nic','HP con λ = 6.25 USA'};
 results_correl = array2table(results_correl,'RowNames',rowNames,'VariableNames',colNames);
 filename = 'Resultados_correlation.xlsx';
@@ -322,8 +337,8 @@ hp_cycle_usa_6_std = (cellfun(@std,hp_usa_6)')./std(hp_cycle_usa_7); %Generates 
 
 %Compilation
 
-results_std = [det1_cycle_nic_std, det1_cycle_usa_std, det2_cycle_nic_std, det2_cycle_usa_std, hp_cycle_nic_100_std, hp_cycle_usa_100_std, hp_cycle_nic_6_std, hp_cycle_usa_6_std]
-results_std(1,:) = [std(det1_gdp_pc_nic), std(det1_gdp_pc_usa), std(det2_gdp_pc_nic), std(det2_gdp_pc_usa), std(hp_cycle_nic_1), std(hp_cycle_usa_1), std(hp_cycle_nic_2), std(hp_cycle_usa_2)]%primera fila solo incluye la desviacion por si sola
+results_std = [det1_cycle_nic_std, det1_cycle_usa_std, det2_cycle_nic_std, det2_cycle_usa_std, hp_cycle_nic_100_std, hp_cycle_usa_100_std, hp_cycle_nic_6_std, hp_cycle_usa_6_std];
+results_std(1,:) = [std(det1_gdp_pc_nic), std(det1_gdp_pc_usa), std(det2_gdp_pc_nic), std(det2_gdp_pc_usa), std(hp_cycle_nic_1), std(hp_cycle_usa_1), std(hp_cycle_nic_2), std(hp_cycle_usa_2)];%primera fila solo incluye la desviacion por si sola
 
 
 %Export to excel
@@ -344,6 +359,8 @@ writetable(results_std,filename);
 [acf_det1_G_nic,~] = autocorr(det1_G_nic,1);
 [acf_det1_tb_nic,~] = autocorr(det1_tb_nic,1);
 [acf_det1_gy_nic,~] = autocorr(det1_gy_nic,1);
+[acf_det1_X_nic,~] = autocorr(det1_X_nic,1);
+[acf_det1_M_nic,~] = autocorr(det1_M_nic,1);
 
 %Metodo detrending lineal - USA
 [acf_det1_gdp_pc_usa,~] = autocorr(det1_gdp_pc_usa,1);
@@ -352,6 +369,8 @@ writetable(results_std,filename);
 [acf_det1_G_usa,~] = autocorr(det1_G_usa,1);
 [acf_det1_tb_usa,~] = autocorr(det1_tb_usa,1);
 [acf_det1_gy_usa,~] = autocorr(det1_gy_usa,1);
+[acf_det1_X_usa,~] = autocorr(det1_X_usa,1);
+[acf_det1_M_usa,~] = autocorr(det1_M_usa,1);
 
 %Metodo detrending cuadratico - Nicaragua
 [acf_det2_gdp_pc_nic,~] = autocorr(det2_gdp_pc_nic,1);
@@ -360,6 +379,8 @@ writetable(results_std,filename);
 [acf_det2_G_nic,~] = autocorr(det2_G_nic,1);
 [acf_det2_tb_nic,~] = autocorr(det2_tb_nic,1);
 [acf_det2_gy_nic,~] = autocorr(det2_gy_nic,1);
+[acf_det2_X_nic,~] = autocorr(det2_X_nic,1);
+[acf_det2_M_nic,~] = autocorr(det2_M_nic,1);
 
 %Metodo detrending cuadratico - USA
 [acf_det2_gdp_pc_usa,~] = autocorr(det2_gdp_pc_usa,1);
@@ -368,7 +389,8 @@ writetable(results_std,filename);
 [acf_det2_G_usa,~] = autocorr(det2_G_usa,1);
 [acf_det2_tb_usa,~] = autocorr(det2_tb_usa,1);
 [acf_det2_gy_usa,~] = autocorr(det2_gy_usa,1);
-
+[acf_det2_X_usa,~] = autocorr(det2_X_usa,1);
+[acf_det2_M_usa,~] = autocorr(det2_M_usa,1);
 %Metodo HP lambda=100 - Nicaragua 
 [acf_hp100_cycle_nic_1,~] = autocorr(hp_cycle_nic_1,1);
 [acf_hp100_cycle_nic_2,~] = autocorr(hp_cycle_nic_2,1);
@@ -376,7 +398,8 @@ writetable(results_std,filename);
 [acf_hp100_cycle_nic_4,~] = autocorr(hp_cycle_nic_4,1);
 [acf_hp100_cycle_nic_5,~] = autocorr(hp_cycle_nic_5,1);
 [acf_hp100_cycle_nic_6,~] = autocorr(hp_cycle_nic_6,1);
-
+[acf_hp100_cycle_nic_x,~] = autocorr(hp_cycle_nic_x_1,1);
+[acf_hp100_cycle_nic_m,~] = autocorr(hp_cycle_nic_m_1,1);
 %Metodo HP lambda=100 - United States 
 [acf_hp100_cycle_usa_1,~] = autocorr(hp_cycle_usa_1,1);
 [acf_hp100_cycle_usa_2,~] = autocorr(hp_cycle_usa_2,1);
@@ -384,7 +407,8 @@ writetable(results_std,filename);
 [acf_hp100_cycle_usa_4,~] = autocorr(hp_cycle_usa_4,1);
 [acf_hp100_cycle_usa_5,~] = autocorr(hp_cycle_usa_5,1);
 [acf_hp100_cycle_usa_6,~] = autocorr(hp_cycle_usa_6,1);
-
+[acf_hp100_cycle_usa_x,~] = autocorr(hp_cycle_usa_x_1,1);
+[acf_hp100_cycle_usa_m,~] = autocorr(hp_cycle_usa_m_1,1);
 %Metodo HP lambda=6 - Nicaragua 
 [acf_hp6_cycle_nic_7,~] = autocorr(hp_cycle_nic_7,1);
 [acf_hp6_cycle_nic_8,~] = autocorr(hp_cycle_nic_8,1);
@@ -392,7 +416,8 @@ writetable(results_std,filename);
 [acf_hp6_cycle_nic_10,~] = autocorr(hp_cycle_nic_10,1);
 [acf_hp6_cycle_nic_11,~] = autocorr(hp_cycle_nic_11,1);
 [acf_hp6_cycle_nic_12,~] = autocorr(hp_cycle_nic_12,1);
-
+[acf_hp6_cycle_nic_x,~] = autocorr(hp_cycle_nic_x_2,1);
+[acf_hp6_cycle_nic_m,~] = autocorr(hp_cycle_nic_m_2,1);
 %Metodo HP lambda=6 - United States 
 [acf_hp6_cycle_usa_7,~] = autocorr(hp_cycle_usa_7,1);
 [acf_hp6_cycle_usa_8,~] = autocorr(hp_cycle_usa_8,1);
@@ -400,7 +425,8 @@ writetable(results_std,filename);
 [acf_hp6_cycle_usa_10,~] = autocorr(hp_cycle_usa_10,1);
 [acf_hp6_cycle_usa_11,~] = autocorr(hp_cycle_usa_11,1);
 [acf_hp6_cycle_usa_12,~] = autocorr(hp_cycle_usa_12,1);
-
+[acf_hp6_cycle_usa_x,~] = autocorr(hp_cycle_usa_x_2,1);
+[acf_hp6_cycle_usa_m,~] = autocorr(hp_cycle_usa_m_2,1);
 %%%%%%%%%% Data collection of autocorrelation by country and detrending method
 %Linear detrending method - Nicaragua 
 results_auto(1,1)= acf_det1_gdp_pc_nic(2,1);
@@ -409,6 +435,8 @@ results_auto(3,1)=acf_det1_I_nic(2,1);
 results_auto(4,1)=acf_det1_G_nic(2,1);
 results_auto(5,1)=acf_det1_tb_nic(2,1);
 results_auto(6,1)=acf_det1_gy_nic(2,1); 
+results_auto(7,1)=acf_det1_X_nic(2,1); 
+results_auto(8,1)=acf_det1_M_nic(2,1); 
 %Linear detrending method - United States 
 results_auto(1,2)= acf_det1_gdp_pc_usa(2,1);
 results_auto(2,2)=acf_det1_C_usa(2,1);
@@ -416,6 +444,8 @@ results_auto(3,2)=acf_det1_I_usa(2,1);
 results_auto(4,2)=acf_det1_G_usa(2,1);
 results_auto(5,2)=acf_det1_tb_usa(2,1);
 results_auto(6,2)=acf_det1_gy_usa(2,1); 
+results_auto(7,2)=acf_det1_X_usa(2,1);
+results_auto(8,2)=acf_det1_M_usa(2,1); 
 %Quadratic detrending method - Nicaragua 
 results_auto(1,3)= acf_det2_gdp_pc_nic(2,1);
 results_auto(2,3)=acf_det2_C_nic(2,1);
@@ -423,6 +453,8 @@ results_auto(3,3)=acf_det2_I_nic(2,1);
 results_auto(4,3)=acf_det2_G_nic(2,1);
 results_auto(5,3)=acf_det2_tb_nic(2,1);
 results_auto(6,3)=acf_det2_gy_nic(2,1); 
+results_auto(7,3)=acf_det2_X_nic(2,1);
+results_auto(8,3)=acf_det2_M_nic(2,1); 
 %Quadratic detrending method - United States 
 results_auto(1,4)= acf_det2_gdp_pc_usa(2,1);
 results_auto(2,4)=acf_det2_C_usa(2,1);
@@ -430,6 +462,8 @@ results_auto(3,4)=acf_det2_I_usa(2,1);
 results_auto(4,4)=acf_det2_G_usa(2,1);
 results_auto(5,4)=acf_det2_tb_usa(2,1);
 results_auto(6,4)=acf_det2_gy_usa(2,1); 
+results_auto(7,4)=acf_det2_X_usa(2,1);
+results_auto(8,4)=acf_det2_M_usa(2,1); 
 %Metodo HP lambda=100 - Nicaragua 
 results_auto(1,5)=acf_hp100_cycle_nic_1(2,1);
 results_auto(2,5)=acf_hp100_cycle_nic_2(2,1);
@@ -437,6 +471,8 @@ results_auto(3,5)=acf_hp100_cycle_nic_3(2,1);
 results_auto(4,5)=acf_hp100_cycle_nic_4(2,1);
 results_auto(5,5)=acf_hp100_cycle_nic_5(2,1);
 results_auto(6,5)=acf_hp100_cycle_nic_6(2,1);
+results_auto(7,5)=acf_hp100_cycle_nic_x(2,1);
+results_auto(8,5)=acf_hp100_cycle_nic_m(2,1);
 %Metodo HP lambda=100 - United States 
 results_auto(1,6)=acf_hp100_cycle_usa_1(2,1);
 results_auto(2,6)=acf_hp100_cycle_usa_2(2,1);
@@ -444,6 +480,8 @@ results_auto(3,6)=acf_hp100_cycle_usa_3(2,1);
 results_auto(4,6)=acf_hp100_cycle_usa_4(2,1);
 results_auto(5,6)=acf_hp100_cycle_usa_5(2,1);
 results_auto(6,6)=acf_hp100_cycle_usa_6(2,1);
+results_auto(7,6)=acf_hp100_cycle_usa_x(2,1);
+results_auto(8,6)=acf_hp100_cycle_usa_m(2,1);
 %Metodo HP lambda=6.25 - Nicaragua 
 results_auto(1,7)=acf_hp6_cycle_nic_7(2,1);
 results_auto(2,7)=acf_hp6_cycle_nic_8(2,1);
@@ -451,6 +489,8 @@ results_auto(3,7)=acf_hp6_cycle_nic_9(2,1);
 results_auto(4,7)=acf_hp6_cycle_nic_10(2,1);
 results_auto(5,7)=acf_hp6_cycle_nic_11(2,1);
 results_auto(6,7)=acf_hp6_cycle_nic_12(2,1);
+results_auto(7,7)=acf_hp6_cycle_nic_x(2,1);
+results_auto(8,7)=acf_hp6_cycle_nic_m(2,1);
 %Metodo HP lambda=6.25 - United States 
 results_auto(1,8)=acf_hp6_cycle_usa_7(2,1);
 results_auto(2,8)=acf_hp6_cycle_usa_8(2,1);
@@ -458,10 +498,11 @@ results_auto(3,8)=acf_hp6_cycle_usa_9(2,1);
 results_auto(4,8)=acf_hp6_cycle_usa_10(2,1);
 results_auto(5,8)=acf_hp6_cycle_usa_11(2,1);
 results_auto(6,8)=acf_hp6_cycle_usa_12(2,1);
-
+results_auto(7,8)=acf_hp6_cycle_usa_x(2,1);
+results_auto(8,8)=acf_hp6_cycle_usa_m(2,1);
 
 %Export to excel autocorrelation table 
-rowNames1 = {'y','c','i','g','tb','g/y'};
+rowNames1 = {'y','c','i','g','tb','g/y','x','m'};
 colNames1 = {'Linear Nic','Linear USA','Quadratic Nic','Quadratic USA', 'HP con λ = 100 Nic','HP con λ = 100 USA','HP con λ = 6.25 Nic','HP con λ = 6.25 USA'};
 results_auto = array2table(results_auto,'RowNames',rowNames1,'VariableNames',colNames1);
 filename = 'Resultados_auto.xlsx';
